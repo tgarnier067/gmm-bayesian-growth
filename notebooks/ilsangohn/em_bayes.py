@@ -1,5 +1,6 @@
 import numpy as np
 from model_gm import ModelGM
+from bayes import *
 
 class EM():
 
