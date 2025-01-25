@@ -26,9 +26,8 @@ The project is organized as follows:
   - `Article_lin.pdf` : "Optimal Bayesian Estimation of Gaussian Mixtures with a Growing Number of Components” by Ohn and Lin
 
 - **Source Code**
-  - `Code/`: Contains all the Python scripts necessary for reproducing and extending the results, and jupyter notebooks for interactive data exploration and result visualization.
 
-    `bayes.py` : RJMCMC sampler for Bayesian mixtures with hierarchical priors
+    ***bayes.py*** : RJMCMC sampler for Bayesian mixtures with hierarchical priors
     `discrete_rv.py` : module for common operations on discrete random variables (distributions)
     `dmm.py` : DMM algorithm of Wu and Yang (2020, Ann. Stat.)
     `DP.py` : Neal’s Algorithm 8 for DP mixtures
