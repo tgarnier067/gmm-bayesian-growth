@@ -1,4 +1,4 @@
-# Bayesian-stats-project
+# Bayesian-stats-project - link to github: https://github.com/Pierre-Clayton/Bayesian-stats-project/
 
 ## Reproduction and Extension of Article 3: Optimal Bayesian Estimation of Gaussian Mixtures with a Growing Number of Components
 
