@@ -1,5 +1,5 @@
 import numpy as np
-from model_gm import ModelStudentMixture
+from model_gm import ModelGM
 from model_student_mixture import ModelStudentMixture
 from bayes import *
 

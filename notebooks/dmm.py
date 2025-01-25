@@ -3,7 +3,7 @@ main module
 """
 import numpy as np
 import moments as mm
-from model_gm import ModelStudentMixture
+from model_gm import ModelGM
 from model_student_mixture import ModelStudentMixture
 
     # input: samples
