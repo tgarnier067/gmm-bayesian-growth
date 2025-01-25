@@ -76,14 +76,6 @@ To run the project code, ensure the following are installed:
 
 ---
 
-### Installation
-
-1. Clone the Project Repository:
-   ```bash
-   git clone https://github.com/Pierre-Clayton/Bayesian-stats-project.git
-   cd Bayesian-stats-project
-
-
 ## Installation
 
 1. Clone the Project Repository:
