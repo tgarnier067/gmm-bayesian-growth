@@ -27,8 +27,8 @@ The project is organized as follows:
 
 - **Source Code**
 
-    ***bayes.py*** : RJMCMC sampler for Bayesian mixtures with hierarchical priors
-    `discrete_rv.py` : module for common operations on discrete random variables (distributions)
+    `bayes.py` : RJMCMC sampler for Bayesian mixtures with hierarchical priors \n
+    `discrete_rv.py` : module for common operations on discrete random variables (distributions) \n
     `dmm.py` : DMM algorithm of Wu and Yang (2020, Ann. Stat.)
     `DP.py` : Neal’s Algorithm 8 for DP mixtures
     `em_bayes.py` : EM algorithm for obtaining posterior mode of a Bayesian mixture given the number of components and model selection
