@@ -1,5 +1,6 @@
 import numpy as np
-from model_gm import ModelGM
+from model_gm import ModelStudentMixture
+from model_student_mixture import ModelStudentMixture
 from bayes import *
 
 class EM():
@@ -38,7 +39,7 @@ class EM():
                 s_init = np.random.uniform(s_range[0], s_range[1])
             else:
                 s_init = self.sigma
-            start = ModelGM(w=w_init, x=x_init, std=s_init)
+            start = ModelStudentMixture(w=w_init, x=x_init, std=s_init)
             model_cur, _, ll_cur = self.estimate_with_init(samples, start, detail=True)
             if ll_cur > ll_max:
                 model = model_cur
@@ -49,10 +50,10 @@ class EM():
         """
         estimate a model from a given initial
         Args:
-        init (modelGM): initial guess
+        init (ModelStudentMixture): initial guess
 
         Returns:
-        model(modelGM): estimated model
+        model(ModelStudentMixture): estimated model
         iterN(int): number of iterations
         ll_cur(float): last log-likelihood
         """
@@ -109,7 +110,7 @@ def ll_mat(samples, model):
 
     Args:
     samples: ndarray of length n
-    model: ModelGM instance of k components with common sigma
+    model: ModelStudentMixture instance of k components with common sigma
 
     Returns:
     matrix of log-likelihoods of shape (n,k)
@@ -127,7 +128,7 @@ def ll_sample(samples, model):
 
     Args:
     samples: ndarray of length n
-    model: ModelGM instance of k components with common sigma
+    model: ModelStudentMixture instance of k components with common sigma
 
     Return:
     log-likelihood of all samples

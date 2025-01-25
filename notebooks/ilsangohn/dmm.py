@@ -3,7 +3,8 @@ main module
 """
 import numpy as np
 import moments as mm
-from model_gm import ModelGM
+from model_gm import ModelStudentMixture
+from model_student_mixture import ModelStudentMixture
 
     # input: samples
     # output: estimated model
@@ -70,7 +71,7 @@ class DMM():
         samples collected
 
         Returns:
-        an estimated ModelGM
+        an estimated ModelStudentMixture
         """
         samples = np.asarray(samples)
         m_raw = mm.empirical_moment(samples, self.num_mom)
@@ -79,7 +80,7 @@ class DMM():
             m_raw = np.mean(m_raw, axis=1)
             m_esti, var_esti = mm.deconvolve_unknown_variance(m_raw)
             dmom_rv = mm.quadmom(m_esti[:2*self.k-1])
-            return ModelGM(w=dmom_rv.weights, x=dmom_rv.atoms, std=np.sqrt(var_esti))
+            return ModelStudentMixture(w=dmom_rv.weights, x=dmom_rv.atoms, std=np.sqrt(var_esti))
         else:
             m_hermite = np.dot(self.transform[0], m_raw)+self.transform[1]
             m_decon = np.mean(m_hermite, axis=1)
@@ -87,7 +88,7 @@ class DMM():
             wmat = estimate_weight_matrix(m_hermite, dmom_rv)
             dmom_rv = self.estimate_from_moments(m_decon, wmat) # second step estimate
             # print(np.linalg.inv(wmat))
-            return ModelGM(w=dmom_rv.weights, x=dmom_rv.atoms, std=self.sigma)
+            return ModelStudentMixture(w=dmom_rv.weights, x=dmom_rv.atoms, std=self.sigma)
 
     def estimate_online(self, samples_new):
         """
@@ -99,7 +100,7 @@ class DMM():
         new samples
 
         Returns:
-        an estimated ModelGM
+        an estimated ModelStudentMixture
         """
         samples_new = np.asarray(samples_new)
         m_new = mm.empirical_moment(samples_new, self.num_mom) # moments, shape (L,n)
@@ -118,12 +119,12 @@ class DMM():
         if self.sigma is None:
             m_esti, var_esti = mm.deconvolve_unknown_variance(self.online[1])
             dmom_rv = mm.quadmom(m_esti[:2*self.k-1])
-            return ModelGM(w=dmom_rv.weights, x=dmom_rv.atoms, std=np.sqrt(var_esti))
+            return ModelStudentMixture(w=dmom_rv.weights, x=dmom_rv.atoms, std=np.sqrt(var_esti))
         else:
             wmat = np.linalg.inv(self.online[2]-np.dot(self.online[1], self.online[1].T))
             dmom_rv = self.estimate_from_moments(self.online[1].reshape(self.num_mom), wmat)
             # print(np.linalg.inv(wmat))
-            return ModelGM(w=dmom_rv.weights, x=dmom_rv.atoms, std=self.sigma)
+            return ModelStudentMixture(w=dmom_rv.weights, x=dmom_rv.atoms, std=self.sigma)
 
     def estimate_with_wmat(self, samples, wmat=None):
         """
@@ -145,7 +146,7 @@ class DMM():
 
         m_latent = self.estimate_latent_moments(samples)
         dmom_rv = self.estimate_from_moments(m_latent, wmat)
-        return ModelGM(w=dmom_rv.weights, x=dmom_rv.atoms, std=self.sigma)
+        return ModelStudentMixture(w=dmom_rv.weights, x=dmom_rv.atoms, std=self.sigma)
 
     def estimate_select(self, samples, threhold=1):
         """

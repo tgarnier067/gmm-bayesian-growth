@@ -2,6 +2,7 @@ from scipy.stats import t
 import numpy as np
 from discrete_rv import DiscreteRV, assert_shape_equal
 import matplotlib.pyplot as plt
+from scipy.special import gamma
 
 class ModelStudentMixture:
     """

@@ -63,8 +63,6 @@ class ModelGM:
         """
         return DiscreteRV(self.weights, self.sigma)
 
-
-
 def sample_gm(model, num, seed):
     """
     n random samples from Gaussian mixture model
