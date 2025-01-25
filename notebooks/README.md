@@ -1,12 +1,12 @@
 # Optimal Bayesian estimation of Gaussian mixtures with growing number of components
 
-Python code for replicating the simulation results in the paper "Optimal Bayesian estimation of Gaussian mixtures with growing number of components" [[arXiv]](https://arxiv.org/abs/2007.09284)
-
+Python code for replicating and deepen the simulation results in the paper "Optimal Bayesian estimation of Gaussian mixtures with growing number of components" [[arXiv]](https://arxiv.org/abs/2007.09284). This work explores practical implications of replacing Gaussian components with t-Student components.
 
 ## Experiments
 
-* Mixing distribution estimation: `test_mixing.py`
-* The number of components estimation: `test_ncomp.py`
+* Gaussian mixing distribution estimation: `test_mixing.py`
+* Student t mixing distribution estimation: `Notebook_merged_student.ipynb`
+
 
 ## Methods
 
@@ -18,4 +18,4 @@ Python code for replicating the simulation results in the paper "Optimal Bayesia
 
 ### Disclaimer
 
-The python files `discrete_rv.py`, `dmm.py`, `model_gm.py` and `moments.py` are taken from [https://github.com/albuso0/mixture](https://github.com/albuso0/mixture).
+The python files `bayes.py`, `discrete_rv.py`, `dmm.py`, `DP.py`, `model_gm.py`, `moments.py` and `test_mixing.py` are taken from [https://github.com/ilsangohn/bayes_mixture](https://github.com/ilsangohn/bayes_mixture)

@@ -13,7 +13,7 @@ from discrete_rv import wass
     
 ## Model define
 model_list = []
-model_list.append(ModelGM(w=[0.3, 0.2, 0.3, 0.2], x=[-3, -1, 1, 3], std=1))
+model_list.append(ModelGM(w=[0.25, 0.25, 0.25, 0.25], x=[-3, -1, 1, 3], std=1))
 model_list.append(ModelGM(w=[0.25, 0.25, 0.25, 0.25], x=[-1.5, -1, 1, 3], std=1))
 model_list.append(ModelGM(w=[0.4, 0.1, 0.25, 0.25], x=[-3, -1, 1, 3], std=1))
 model_list.append(ModelGM(w=np.ones(7)/7, x=2*np.arange(7)-6, std=1))
