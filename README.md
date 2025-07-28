@@ -1,4 +1,4 @@
-## Reproduction and Extension of Article 3: Optimal Bayesian Estimation of Gaussian Mixtures with a Growing Number of Components
+## Reproduction and Extension of : Optimal Bayesian Estimation of Gaussian Mixtures with a Growing Number of Components
 
 ### Introduction
 
