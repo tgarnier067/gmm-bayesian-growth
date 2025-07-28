@@ -1,5 +1,3 @@
-# Bayesian-stats-project - link to github: https://github.com/Pierre-Clayton/Bayesian-stats-project/
-
 ## Reproduction and Extension of Article 3: Optimal Bayesian Estimation of Gaussian Mixtures with a Growing Number of Components
 
 ### Introduction
@@ -99,7 +97,9 @@ Example of running a Python script:
 ```bash
 python src/estimate_mixture.py
 ```
-Contributions
+
+---
+## Contributions
 
 This project is carried out by a group of three students:
 	•	Student 1: Pierre CLAYTON 
